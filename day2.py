@@ -1,7 +1,7 @@
 from sys import argv
 
 def calc_game(game: str) -> int:
-    cubes = {'red': 12, 'blue': 13, 'green': 14} # number of cubes in bag
+    cubes = {'red': 12, 'blue': 14, 'green': 13} # number of cubes in bag
 
     game = game.split(':') 
     id = game[0].split()[1] # get game id
@@ -14,7 +14,6 @@ def calc_game(game: str) -> int:
             num, color = draw.split()
 
             if int(num) > cubes[color]: # game not possible
-                print(id)
                 return 0
             
     return int(id) # game is possible return id
