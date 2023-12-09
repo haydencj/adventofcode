@@ -3,10 +3,9 @@ from sys import argv
 def calc_game(game: str) -> int:
     cubes = {'red': 12, 'blue': 13, 'green': 14} # number of cubes in bag
 
-    match = game.split(':')
-    id = match[0].split()[1]
-
-    sets = match[1].split(';')
+    game = game.split(':') 
+    id = game[0].split()[1] # get game id
+    sets = game[1].split(';') # get list of sets
 
     for set in sets: # each set per game
         for draw in set.split(','): # each draw per set
