@@ -2,7 +2,7 @@ from sys import argv
 
 def calc_game(game: str) -> int:
     cubes = {'red': 12, 'blue': 14, 'green': 13} # number of cubes in bag
-    min_cubes = {'red': 0, 'blue': 0, 'green': 0}
+    max_cubes = {'red': 0, 'blue': 0, 'green': 0}
 
     game = game.split(':') 
     id = game[0].split()[1] # get game id
@@ -14,20 +14,20 @@ def calc_game(game: str) -> int:
             draw = draw.lstrip()
             num, color = draw.split()
 
-            # check for min here
-            if int(num) > min_cubes[color]:
-                min_cubes[color] = int(num)
+            # check for max here
+            if int(num) > max_cubes[color]:
+                max_cubes[color] = int(num)
 
             # part 1
             # if int(num) > cubes[color]: # game not possible
             #     return 0
 
-    power = min_cubes['red'] * min_cubes['blue'] * min_cubes['green']
+    power = max_cubes['red'] * max_cubes['blue'] * max_cubes['green']
 
-    print(min_cubes)
+    print(max_cubes)
     print(power)
 
-    return power # game is possible return id
+    return power
  
 if __name__ == '__main__':
     powers = list()
