@@ -39,5 +39,5 @@ if __name__ == '__main__':
             value = checkFront(line) + checkBack(line) # concatenate first and last digits to form two digit
             values.append(int(value)) # add value to list to be summed
 
-        calibrationSum = sum(values)
-        print(calibrationSum)
+    calibrationSum = sum(values)
+    print(calibrationSum)

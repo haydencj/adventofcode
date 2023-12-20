@@ -36,5 +36,5 @@ if __name__ == '__main__':
         for game in file:
             powers.append( calc_game(game.strip()) )
         
-        powersSum = sum(powers)
-        print(powersSum)
+    powersSum = sum(powers)
+    print(powersSum)
