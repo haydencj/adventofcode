@@ -1,8 +1,6 @@
 from sys import argv
 # 10 columns 10 rows
 
-# 467 (0, 0) adjacent to * (1, 3)
-# 7 in 467 is (0, 2)
 symbols = ['*', '#', '+', '$']
 
 # create algorithm to check if number has a symbol adjacent to that coord
