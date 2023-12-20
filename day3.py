@@ -9,10 +9,24 @@ symbols = ['*', '#', '+', '$']
 def checkAdjacent(coords, file):
     for x, line in enumerate(file): # row
         for y, char in enumerate(line): # column
-            # use switch case instead of ifs?
-            if tuple((x, y+1)) in coords and char != '.':
-                print(f"{char}: ({x}, {y})")
-            
+            # FIND ALTERNATIVE
+            if tuple((x, y+1)) in coords and char != '.':     # bottom
+                print(f"{char}: ({x},{y})")
+            elif tuple((x+1, y+1)) in coords and char != '.': # bottom right 
+                print(f"{char}: ({x},{y})")
+            elif tuple((x+1, y)) in coords and char != '.':   # right
+                print(f"{char}: ({x},{y})")
+            elif tuple((x, y-1)) in coords and char != '.':   # top
+                print(f"{char}: ({x},{y})")
+            elif tuple((x-1, y-1)) in coords and char != '.': # top left
+                print(f"{char}: ({x},{y})")
+            elif tuple((x-1, y)) in coords and char != '.':   # left
+                print(f"{char}: ({x},{y})")
+            elif tuple((x-1, y+1)) in coords and char != '.': # bottom left
+                print(f"{char}: ({x},{y})")
+            elif tuple((x+1, y-1)) in coords and char != '.': # top right
+                print(f"{char}: ({x},{y})")
+
 
 # assign every symbol a x and y value
 def getCoords(file):
